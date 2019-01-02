@@ -1,2 +1,2 @@
 # ev-kirchenjahr
-WordPress Plugin zur Anzeige des Kirchnjahr evangelisch als Widget
+WordPress Plugin zur Anzeige des "Kirchenjahr evangelisch" als Widget
