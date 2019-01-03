@@ -40,7 +40,7 @@ git clone https://github.com/Byggvir/ev-kirchenjahr/
 
 ### ZIP-Archiv
 
-Als ZIP -Archiv von github herunterladen und in */wp-content/plugins* entpacken.
+Als ZIP-Archiv des Branch Master von github herunterladen und in */wp-content/plugins* entpacken.
 
 Ungefähr so:
 
@@ -48,3 +48,7 @@ Ungefähr so:
 wget https://github.com/Byggvir/ev-kirchenjahr/archive/master.zip -d /var/www/html/wp-content/plugins/
 unzip master.zip
 ```shell
+
+Oder das letzte stabile Release 
+* [zip](https://github.com/Byggvir/ev-kirchenjahr/archive/v2019.0.0.zip)
+* [tar.gz](https://github.com/Byggvir/ev-kirchenjahr/archive/v2019.0.0.tar.gz)
