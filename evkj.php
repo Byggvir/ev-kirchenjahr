@@ -81,12 +81,18 @@ function run_evkj() {
 }
 
     /**
-     * Embedd Widget and Shortcode.
+     * Embedd Widget
      *
      * @since    v2019.0.0
      */
-
 	require_once plugin_dir_path( __FILE__ ) . 'public/class_widget.php';
-    require_once plugin_dir_path( __FILE__ ) . 'public/class_shortcodes.php';
+
+	/**
+     * Embedd Shortcode.
+     *
+     * @since    v2019.1.0
+     */
+
+	require_once plugin_dir_path( __FILE__ ) . 'public/class_shortcodes.php';
 
 run_evkj();
