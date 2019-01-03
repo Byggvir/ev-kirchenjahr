@@ -28,12 +28,12 @@ require_once plugin_dir_path( __FILE__ ) . 'class_litkalapi.php';
 $evkj_DefLabels =
 	array (
 	'size' => 'Gr&ouml&szlig;e (small / big)',
-	'fields' => '(0 = Wochenpsalm, 1 = Wochenspruch, 2 = Eingangspsalm, 3 = AT-Lesung, 4= Epistel, 5 = Predigttext) ',
-	'css' => 'StyleSheet',
-	'date' => 'Datum',
+	'fields' => 'Felder: 0 = Wochenpsalm, 1 = Wochenspruch, 2 = Eingangspsalm, 3 = AT-Lesung, 4= Epistel, 5 = Predigttext, 6 = Evangelium, 7 = Wochenlied, 8 = liturgische Farbe,  9 = Wochenspruch (Text)) ',
 	'current' => 'Aktueller = true, kommender Feiertag leer',
-	'title' => 'Titel',
-	'url' => 'URL https://liturgischer-kalender.bayern-evangelisch.de/widget/widget.php'
+	'date' => 'Datum',
+	'url' => 'URL https://liturgischer-kalender.bayern-evangelisch.de/widget/widget.php',
+	'css' => 'StyleSheet',
+	'title' => 'Titel'
 
 );
 
@@ -41,11 +41,11 @@ $evkj_SettingNames =
 	array (
 	'size' => 'size',
 	'fields' => 'fields',
-	'css' => 'css',
-	'date' => 'date',
 	'current' => 'current',
-	'title' => 'title',
-	'url' => 'url'
+	'date' => 'date',
+	'url' => 'url',
+	'css' => 'css',
+	'title' => 'title'
 );
 
 /*
@@ -61,23 +61,27 @@ $evkj_DefValues =
 	// Geben sie hier die gewünschte Widgetvariante ('small' oder 'big') an.
 	'size' => 'big',
 
-	// Geben Sie hier die gewünschten liturgischen Informationen kommasepariert (0 = Wochenpsalm, 1 = Wochenspruch, 2 = Eingangspsalm, 3 = AT-Lesung, 4= Epistel, 5 = Predigttext) an.
-	'fields' => '0,1,2,3,4,5',
-
-	// Geben Sie hier eine CSS-Datei an, die im Widget aufgerufen werden soll (z.B. http://www.ihredomain.de/meincss.css).
-	'css' => '',
-
-	// Geben Sie hier ein spezifisches Datum an, zu dem das Widget Daten anzeigen soll
-	'date' => '',
+	// Geben Sie hier die gewünschten liturgischen Informationen kommasepariert
+	// 0 = Wochenpsalm, 1 = Wochenspruch, 2 = Eingangspsalm, 3 = AT-Lesung, 4= Epistel,
+	// 5 = Predigttext, 6 = Evangelium ,7 = Wochenlied , 8 = liturgische Farbe als Text 9 = Wochenspruch (als Text)
+	// an.
+	'fields' => '3,4,5,6,7,9',
 
 	// Geben Sie hier ein 'true' ein, wenn das Widget den aktuellen statt den kommenden Feiertag anzeigen soll
 	'current' => '',
 
-	// Titel de Widget
-	'title' => 'Kirchenjahr evangelisch',
+	// Geben Sie hier ein spezifisches Datum an, zu dem das Widget Daten anzeigen soll
+	'date' => '',
 
 	// Url für den Download des Liturgischen Kalenders
-	'url' => 'https://liturgischer-kalender.bayern-evangelisch.de/widget/widget.php'
+	'url' => 'https://liturgischer-kalender.bayern-evangelisch.de/widget/widget.php',
+
+	// Geben Sie hier eine CSS-Datei an, die im Widget aufgerufen werden soll (z.B. http://www.ihredomain.de/meincss.css).
+	'css' => '',
+
+	// Titel de Widget
+	'title' => 'Kirchenjahr evangelisch'
+
 
 );
 
@@ -113,13 +117,13 @@ class evkj_Widget extends WP_Widget {
         
 		echo "<div class=\"evkj-widget\">";
         print $API-> litdayinfo ( 
-            $size=$wg_atts['size'],
-            $fields=$wg_atts['fields'],
-            $css=$wg_atts['css'],
-            $date=$wg_atts['date'],
-            $current=$wg_atts['current'],
+            $wg_atts['size'],
+            $wg_atts['fields'],
+            $wg_atts['current'],
+            $wg_atts['date'],
+            true,
             $url = $wg_atts['url'],
-            $bodyonly=true);
+            $css=$wg_atts['css']);
 
 		print "
 		<div class=\"evkj-copyright\">Ein Angebot der <a href=\"https://liturgischer-kalender.bayern-evangelisch.de\" target=\"_blank\">ELKB & VELKD</a>

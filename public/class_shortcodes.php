@@ -36,7 +36,7 @@ class Evkj_ShortCodes {
 	 */
 	public function __construct() {
 
-        &this->version = SHORTCODE_VERSION;
+        $this->version = SHORTCODE_VERSION;
         
         // Add the Shortcode
 
@@ -58,21 +58,22 @@ class Evkj_ShortCodes {
 		extract(shortcode_atts(array(
 					'size' => 'big',
 					'fields' => '0,1,5',
-					'date' => '',
-					'current' => ''
-				), $atts));
+					'current' => '',
+					'date' => ''
+					), $atts));
 
+		(strtolower($size) == 'big') ? $size = 'big' : $size='small';
+        ($size == 'big') ? $SEP = ' / ' : $SEP = '<br />';
+		
 		$API =  new Evkj_WidgetAPI();
 		$MyShortCode = $API->litdayinfo (
-			$size=$size,
-			$fields=$fields,
-			$date=$date,
-			$current=$current
+			$size,
+			$fields,
+			$current,
+			$date
 		);
-
-		($size='big') ? $SEP = ' / ' : $SEP = '<br />';
-
-		$Copyright = "
+        
+        $Copyright = "
         <div class=\"evkj-copyright\">
         Ein Angebot der <a href=\"https://liturgischer-kalender.bayern-evangelisch.de\" target=\"_blank\">ELKB & VELKD</a>
 		$SEP
@@ -85,7 +86,7 @@ class Evkj_ShortCodes {
 
 		return "
         <!-- Begin shortcode Lit. Kalender -->
-		<div class=\"evkj-shortcode\">
+		<div class=\"evkj-shortcode-$size\">
         $MyShortCode
 		$Copyright
         <!-- End shortcode Lit. Kalender  -->

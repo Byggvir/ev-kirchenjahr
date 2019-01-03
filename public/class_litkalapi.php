@@ -45,7 +45,7 @@ class Evkj_WidgetAPI {
 	/** constructor */
 	function __construct() {
 
-	   &this->version = API_VERSION;
+	   $this->version = API_VERSION;
 	   
 	}
 
@@ -59,7 +59,23 @@ class Evkj_WidgetAPI {
 	 * @param string $url
 	 * @return string (HTML)
 	 */
-	 
+
+	/**
+	 * Belibiges halbwegs interpretierbares Englisches Daum für die Schnittstelle konvertieren 
+	 * @param unknown $date (optional)
+	 * @return unknown
+	 */
+	
+	private function convertDate( $date = '') {
+
+		if (($timestamp = strtotime($date)) === false) {
+			return date('Y-m-d');
+		} else {
+			return date('Y-m-d', $timestamp);
+		}
+
+	}
+	
 	private function get_withoutcurl( $url ) {
 
 		$page='';
@@ -108,7 +124,7 @@ class Evkj_WidgetAPI {
 		}
 		else {
 			// Fehlermeldung:
-			$returned = "<p class=\"evkj-warning\">Der Liturgische Kalender ist nicht erreichbar!</p>";
+			$returned = "<p class=\"evkj-warning\">Der Liturgische Kalender ist nicht erreichbar! $url</p>";
 		}
 		return $returned;
 
@@ -185,22 +201,22 @@ class Evkj_WidgetAPI {
 	 *
 	 * @param string $size     (optional)
 	 * @param string $fields   (optional)
-	 * @param string $css      (optional)
-	 * @param string $date     (optional)
 	 * @param string $current  (optional)
-	 * @param string $url      (optional)
+	 * @param string $date     (optional)
 	 * @param string $bodyonly (optional)
+	 * @param string $url      (optional)
+	 * @param string $css      (optional)
 	 * @return string
 	 */
 	public function litdayinfo(
 
 		$size = 'big',
 		$fields = '0,1,2,3,4,5,6,7,8,9',
-		$css = '',
-		$date = '',
 		$current = '',
+		$date = '',
+		$bodyonly = true ,
 		$url = 'https://liturgischer-kalender.bayern-evangelisch.de/widget/widget.php',
-		$bodyonly = true ) {
+		$css = '' ) {
 
 		switch  (strtolower($fields)) {
 		case "all":
@@ -211,7 +227,20 @@ class Evkj_WidgetAPI {
 			$fields='0,1,5';
 			break;
 		}
-		$queryString = 'size=' . $size . '&fields=' . $fields . '&css=' . $css . '&date=' . $date . '&current=' . $current ;
+		
+		/** 
+		 * Das Plugin akzeptiert mehr Datumsformate als die Widget-Schnittselle
+		 */
+		
+		
+		($date != "")? $widgetdate = $this->convertDate($date) : $widgetdate = "";
+		
+		// Nur true oder leer!
+		
+		(strtolower($current) == "true") ? $current= "true" : $current="";
+		
+		
+		$queryString = 'size=' . $size . '&fields=' . $fields . '&current=' . $current . '&date=' . $widgetdate;  //  CSS zur Zeit wird nicht benötigt. '&css=' . $css  ;
 
 		$widgeturl = $url . '?' . $queryString ;
 
@@ -225,7 +254,7 @@ class Evkj_WidgetAPI {
 		}
 
 		/**
-		 * Überflüssiges bei Bedarf HTML entfernen!
+		 * Überflüssiges HTML  bei Bedarf entfernen, derzeit immer!
 		 */
 		if ($bodyonly) { $content = $this->removeHeadBody( $content ); }
 

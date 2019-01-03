@@ -8,6 +8,16 @@
    background-color : #fff;
 }
 
+
+.evkj-shortcode-big {
+   max-width: 600px;
+}
+
+.evkj-shortcode-small {
+   max-width: 300px;
+    
+}
+
 .evkj-copyright {
    color : blue; 
    font-size : 0.1em;
