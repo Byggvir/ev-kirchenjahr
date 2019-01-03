@@ -19,7 +19,7 @@
  */
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-require_once plugin_dir_path( __FILE__ ) . '../lib/lib.php';
+require_once plugin_dir_path( __FILE__ ) . 'class_litkalapi.php';
 
 /**
  * Losungen widget for SQL
@@ -109,39 +109,25 @@ class evkj_Widget extends WP_Widget {
 		}
 		$wg_atts['title'] = apply_filters('widget_title', $wg_atts['title']);
 
+        $API = new Evkj_WidgetAPI();
+        
 		echo "<div class=\"evkj-widget\">";
+        print $API-> litdayinfo ( 
+            $size=$wg_atts['size'],
+            $fields=$wg_atts['fields'],
+            $css=$wg_atts['css'],
+            $date=$wg_atts['date'],
+            $current=$wg_atts['current'],
+            $url = $wg_atts['url'],
+            $bodyonly=true);
 
-		$queryString = 'size=' . $wg_atts['size'] . '&fields=' . $wg_atts['fields'] . '&css=' . $wg_atts['css'] . '&date=' . $wg_atts['date'] . '&current=' . $wg_atts['current'];
-
-		$url = $evkj_DefValues['url'] . '?' . $queryString;
-
-		$lk_widget_content = '';
-
-		if (function_exists('curl_init')) {
-			$lk_widget_content = evkj_get_withcurl($url) ;
-		}
-		else {
-			$lk_widget_content = evkj_get_withoutcurl($url) ;;
-		}
-
-
-
-		/**
-		 * Überflüssiges HTML entfernen!
-		 */
-		$lk_widget_content = preg_replace( "/\r|\n/", " ", $lk_widget_content );
-
-		$lk_widget_content = preg_replace('#<!DOCTYPE.*<body class="lk_widget_body">#', '', $lk_widget_content);
-		$lk_widget_content = preg_replace('#</body>.*#', '', $lk_widget_content);
-		$lk_widget_content = preg_replace('#<#', "\n<", $lk_widget_content);
-
-
-		print $lk_widget_content;
-		print '<div class="evkj-copyright">Powered by <a href="https://github.com/Byggvir/ev-kirchenjahr" target="_blank">Ev. Kirchenjahr 2019.0.0</a><br/>&copy; 2019 Thomas Arend<br /> Ein Angebot der <a href="https://liturgischer-kalender.bayern-evangelisch.de" target="_blank">ELKB & VELKD</a></div>';
-		print '</div>';
+		print "
+		<div class=\"evkj-copyright\">Ein Angebot der <a href=\"https://liturgischer-kalender.bayern-evangelisch.de\" target=\"_blank\">ELKB & VELKD</a>
+		<br />Powered by <a href=\"https://github.com/Byggvir/ev-kirchenjahr\" target=\"_blank\">Ev. Kirchenjahr 2019.0.0</a><br/>&copy; 2019 Thomas Arend<br /></div>
+		</div>
+		";
 
 	}
-
 
 	/**
 	 *

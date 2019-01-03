@@ -9,18 +9,18 @@
  * that starts the plugin.
  *
  * @link              https://byggvir-de
- * @since             2019.0.0
+ * @since             v2019.1.0
  * @package           Evkj
  *
  * @wordpress-plugin
  * Plugin Name:       Kirchenjahr evangelisch
  * Plugin URI:        https://github.com/Byggvir/ev-kirchenjahr
  * Description:       Zeigt den Evangelischen Liturgischen Kalender in einem Widget in der Seitenleiste an. 
- * Version:           1.0.0
+ * Version:           v2019.1.0
  * Author:            Thomas Arend
  * Author URI:        https://byggvir-de
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPL-3.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       evkj
  * Domain Path:       /languages
  */
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PLUGIN_NAME_VERSION', '2019.0.0' );
+define( 'PLUGIN_NAME_VERSION', 'v2019.1.0' );
 
 /**
  * The code that runs during plugin activation.
@@ -71,15 +71,22 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-evkj.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * @since    v2019.0.0
  */
 function run_evkj() {
 
 	$plugin = new Evkj();
 	$plugin->run();
-    
+
 }
 
-require_once plugin_dir_path( __FILE__ ) . 'public/class_widget.php';
+    /**
+     * Embedd Widget and Shortcode.
+     *
+     * @since    v2019.0.0
+     */
+
+	require_once plugin_dir_path( __FILE__ ) . 'public/class_widget.php';
+    require_once plugin_dir_path( __FILE__ ) . 'public/class_shortcodes.php';
 
 run_evkj();

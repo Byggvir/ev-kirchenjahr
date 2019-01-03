@@ -3,7 +3,7 @@
  * included in this file.
  */
 
-.evkj-widget {
+.evkj-widget, .evkj-shortcode {
    border: 1px solid #ccc;
    background-color : #fff;
 }
@@ -12,6 +12,16 @@
    color : blue; 
    font-size : 0.1em;
    margin: 0 5% 1em;
+}
+
+/**
+ *  Folgende Klasse wir um die  Feldnamen erzeugt. 
+ * Leider sind diese Im Original nicht formatioerbar.
+ * 
+ */
+
+.evkj-fieldname {
+    font-weight : bold;
 }
 
 .lk_widget_body { /* Im Plugin nicht genutzt, da body entfernt */
@@ -39,12 +49,12 @@
 
 .lk_widget_small {
 	width: 100%;
-	max-width: 200px;
+	max-width: 300px;
 }
 
 .lk_widget_big {
 	width: 100%;
-	max-width: 400px;
+	max-width: 600px;
 }
 
 .lk_widget_box {
@@ -116,7 +126,7 @@ a.lk_widget_link_ext {
 	font-size: 1em;
 }
 
-a.lk_widget_link_ext:after {
+a.lk_widget_link_ext:before {
 	vertical-align: middle;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;

@@ -1,5 +1,17 @@
 # ev-kirchenjahr
-WordPress Plugin zur Anzeige des "Kirchenjahr evangelisch" als Widget
+WordPress Plugin zur Anzeige des "Kirchenjahr evangelisch" mit einem Widget oder Shortcode *litkalender*
+
+Das Widget zeigt die Informatione zu einem Feiertag von Kirchenjahr evangelisch]([https://literliturgischer-kalender.bayern-evangelisch.de) als Widget in einer WordPress-Seitenleiste an.
+
+Alternativ kann die Information in einem Artikel oder einer Seite mit dem Shortcode *litkalender* eingebunden werden.
+
+Beispiel Shortcode:
+
+    [litkalender size=big fields=0,1,2,3,4,5,6,7,8,9 date=2023-12-24]
+
+## Beispiel
+
+![Screenshot](https://raw.githubusercontent.com/Byggvir/ev-kirchenjahr/master/screeshot-1.png)
 
 ## Parameter
 
@@ -27,6 +39,11 @@ Wert |Feld
 7 |	Wochenlied
 8 |	liturgische Farbe als Text
 9 |	Wochenspruch (als Text)
+
+
+Die Parameter *url* und *css* sind im Shordcode nicht implementiert, da nicht sinnvoll. Die von *Kirchenjahr evangelisch* zurückgelieferten CSS-Informatioen werden entfernt und durch eigene ersetzt.
+
+Der Parameter *url* wäre nur sinnvoll, wenn es eine zweite Quelle für die Informationen gäbe, was derzeit nicht der Fall ist. er kann aber über die Einstellungen geändert werden (Steht noch auf ToDo).
 
 ## Installation
 
