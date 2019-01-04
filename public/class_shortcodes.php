@@ -66,13 +66,28 @@ class Evkj_ShortCodes {
         ($size == 'big') ? $SEP = ' / ' : $SEP = '<br />';
 		
 		$API =  new Evkj_WidgetAPI();
-		$MyShortCode = $API->litdayinfo (
-			$size,
-			$fields,
-			$current,
-			$date
-		);
-        
+		
+		if (preg_match('/(Googlebot|bingbot)/', $_SERVER['HTTP_USER_AGENT'])) {
+            $innercontent ='
+                <div class="lk_widget lk_widget_small"> 		
+                <div class="lk_widget_inner"> 			
+                <h2>Liturgischer Kalender
+                </h2>
+                <div class="lk_widget_box">
+                <p><span class="evkj-fieldname">Der HERR sprach zu den Bots:</span><br /> Und ich sage euch auch:<br />Bittet, so wird euch gegeben;<br /> suchet, so werdet ihr finden;<br />klopfet an, so wird euch aufgetan<br />
+                <a href="https://www.bibleserver.com/search/LUT/suchet/1">Lukas 11,9</a><p>
+                </div></div></div>
+                ';
+        }
+        else {
+            $innercontent = $API->litdayinfo (
+                $size,
+                $fields,
+                $current,
+                $date
+            );
+        }
+		
         $Copyright = "
         <div class=\"evkj-copyright\">
         Ein Angebot der <a href=\"https://liturgischer-kalender.bayern-evangelisch.de\" target=\"_blank\">ELKB & VELKD</a>
@@ -87,7 +102,7 @@ class Evkj_ShortCodes {
 		return "
         <!-- Begin shortcode Lit. Kalender -->
 		<div class=\"evkj-shortcode-$size\">
-        $MyShortCode
+        $innercontent
 		$Copyright
         <!-- End shortcode Lit. Kalender  -->
         ";

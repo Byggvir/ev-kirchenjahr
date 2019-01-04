@@ -115,8 +115,25 @@ class evkj_Widget extends WP_Widget {
 
         $API = new Evkj_WidgetAPI();
         
-		echo "<div class=\"evkj-widget\">";
-        print $API-> litdayinfo ( 
+        /**
+         *
+         * Detect Google Bot or Bing Bot. We don't care about real or a fake.  
+         *
+         */
+        if (preg_match('/(Googlebot|bingbot)/', $_SERVER['HTTP_USER_AGENT'])) {
+            $innercontent = '
+                <div class="lk_widget lk_widget_small"> 		
+                <div class="lk_widget_inner"> 			
+                <h2>Liturgischer Kalender
+                </h2> 			
+                <div class="lk_widget_box">
+                <p><span class="evkj-fieldname">Der HERR sprach zu den Bots:</span><br /> Und ich sage euch auch:<br />Bittet, so wird euch gegeben;<br /> suchet, so werdet ihr finden;<br />klopfet an, so wird euch aufgetan.<br />
+                <a href="https://www.bibleserver.com/search/LUT/suchet/1">Lukas 11,9</a><p>
+                </div></div></div>
+                ';
+        }
+        else {
+            $innercontent = $API-> litdayinfo ( 
             $wg_atts['size'],
             $wg_atts['fields'],
             $wg_atts['current'],
@@ -124,8 +141,11 @@ class evkj_Widget extends WP_Widget {
             true,
             $url = $wg_atts['url'],
             $css=$wg_atts['css']);
-
+        }
+        
 		print "
+        <div class=\"evkj-widget\">
+        $innercontent
 		<div class=\"evkj-copyright\">Ein Angebot der <a href=\"https://liturgischer-kalender.bayern-evangelisch.de\" target=\"_blank\">ELKB & VELKD</a>
 		<br />Powered by <a href=\"https://github.com/Byggvir/ev-kirchenjahr\" target=\"_blank\">Ev. Kirchenjahr 2019.1.0</a><br/>&copy; 2019 Thomas Arend<br /></div>
 		</div>
