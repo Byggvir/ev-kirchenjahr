@@ -146,7 +146,7 @@ class evkj_Widget extends WP_Widget {
             $css=$wg_atts['css']);
         }
         
-        $v= &this->version;
+        $v= $this->version;
         
 		print "
         <div class=\"evkj-widget\">
