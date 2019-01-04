@@ -4,7 +4,7 @@
  *
  * @link              http://byggvir.de
  * @since             2019.0.1
- * @version 2019.0.1
+ * @version 2019.1.1
  * @copyright 2019 Thomas Arend Rheinbach Germany
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  * @plugin-wordpress
@@ -28,7 +28,7 @@ require_once plugin_dir_path( __FILE__ ) . 'class_litkalapi.php';
 $evkj_DefLabels =
 	array (
 	'size' => 'Gr&ouml&szlig;e (small / big)',
-	'fields' => 'Felder: 0 = Wochenpsalm, 1 = Wochenspruch, 2 = Eingangspsalm, 3 = AT-Lesung, 4= Epistel, 5 = Predigttext, 6 = Evangelium, 7 = Wochenlied, 8 = liturgische Farbe,  9 = Wochenspruch (Text)) ',
+	'fields' => 'Felder: 0 = Wochenspruch, 1 = Wochenpsalm, 2 = Eingangspsalm, 3 = AT-Lesung, 4= Epistel, 5 = Predigttext, 6 = Evangelium, 7 = Wochenlied, 8 = liturgische Farbe,  9 = Wochenspruch (Text)) ',
 	'current' => 'Aktueller = true, kommender Feiertag leer',
 	'date' => 'Datum',
 	'url' => 'URL https://liturgischer-kalender.bayern-evangelisch.de/widget/widget.php',
@@ -62,7 +62,7 @@ $evkj_DefValues =
 	'size' => 'big',
 
 	// Geben Sie hier die gewünschten liturgischen Informationen kommasepariert
-	// 0 = Wochenpsalm, 1 = Wochenspruch, 2 = Eingangspsalm, 3 = AT-Lesung, 4= Epistel,
+	// 0 = Wochenpspruch, 1 = Wochenpsalm, 2 = Eingangspsalm, 3 = AT-Lesung, 4= Epistel,
 	// 5 = Predigttext, 6 = Evangelium ,7 = Wochenlied , 8 = liturgische Farbe als Text 9 = Wochenspruch (als Text)
 	// an.
 	'fields' => '3,4,5,6,7,9',
@@ -87,12 +87,15 @@ $evkj_DefValues =
 
 class evkj_Widget extends WP_Widget {
 
+    public $version;
+
 	/** constructor */
 	function __construct() {
 		parent::__construct(
 			/* Base ID */ 'evkj_widget' ,
 			/* Name */ 'Kirchenjahr evangelisch' ,
 			array( 'description' => 'Zeigt die Informationen zum nächsten Feiertag an.' ) );
+        &this->version = 'v2019.1.1';
 	}
 
 
@@ -143,11 +146,13 @@ class evkj_Widget extends WP_Widget {
             $css=$wg_atts['css']);
         }
         
+        $v= &this->version;
+        
 		print "
         <div class=\"evkj-widget\">
         $innercontent
 		<div class=\"evkj-copyright\">Ein Angebot der <a href=\"https://liturgischer-kalender.bayern-evangelisch.de\" target=\"_blank\">ELKB & VELKD</a>
-		<br />Powered by <a href=\"https://github.com/Byggvir/ev-kirchenjahr\" target=\"_blank\">Ev. Kirchenjahr 2019.1.0</a><br/>&copy; 2019 Thomas Arend<br /></div>
+		<br />Powered by <a href=\"https://github.com/Byggvir/ev-kirchenjahr\" target=\"_blank\">Ev. Kirchenjahr $v</a><br/>&copy; 2019 Thomas Arend<br /></div>
 		</div>
 		";
 
