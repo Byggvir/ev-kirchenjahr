@@ -69,3 +69,8 @@ unzip master.zip
 Oder das letzte stabile Release 
 * [zip](https://github.com/Byggvir/ev-kirchenjahr/archive/v2019.0.0.zip)
 * [tar.gz](https://github.com/Byggvir/ev-kirchenjahr/archive/v2019.0.0.tar.gz)
+
+## Changes
+
+* v2019.1.0 Shortcode *litcalender*
+* v2019.1.1 Erkenne Google und Bing Bot und hole keine Lit. Termine
