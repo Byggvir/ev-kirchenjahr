@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://byggvir-de
- * @since             v2019.1.0
+ * @since             v2019.1.1
  * @package           Evkj
  *
  * @wordpress-plugin
  * Plugin Name:       Kirchenjahr evangelisch
  * Plugin URI:        https://github.com/Byggvir/ev-kirchenjahr
  * Description:       Zeigt den Evangelischen Liturgischen Kalender in einem Widget in der Seitenleiste an. 
- * Version:           v2019.1.0
+ * Version:           v2019.1.1
  * Author:            Thomas Arend
  * Author URI:        https://byggvir-de
  * License:           GPL-3.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PLUGIN_NAME_VERSION', 'v2019.1.0' );
+define( 'PLUGIN_NAME_VERSION', 'v2019.1.1' );
 
 /**
  * The code that runs during plugin activation.
