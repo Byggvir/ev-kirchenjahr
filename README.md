@@ -20,7 +20,7 @@ Beispiel Shortcode:
 
 ## Abrbeitsweise
 
-Dau Plungin holt die Daten mittels [../widget-php?size=big&date=<datum>&fields=0,1,2,3,4,5,6,7,8,9]([https://literliturgischer-kalender.bayern-evangelisch.de/widget/widget-php?size=big&date=<datum>&fields=0,1,2,3,4,5,6,7,8,9) vom Server, wertet die Rückgabe aus und speichert das ergebnis in einer WordPress Tabelle *&lt;wp-prefix&gt;-evkj-cache*. Vor erneuter Abfrage eines bestimmten Datums wird geprüft, ob die Werte bereist in der Cache Tabelel enthalten sind. Dies entlastet den Server und beschleunigt die Auslieferung der Seiten.
+Das Plugin holt die Daten mittels [../widget-php?size=big&date=<datum>&fields=0,1,2,3,4,5,6,7,8,9]([https://literliturgischer-kalender.bayern-evangelisch.de/widget/widget-php?size=big&date=<datum>&fields=0,1,2,3,4,5,6,7,8,9) vom Server, wertet die Rückgabe aus und speichert das ergebnis in einer WordPress Tabelle *&lt;wp-prefix&gt;-evkj-cache*. Vor erneuter Abfrage eines bestimmten Datums wird geprüft, ob die Werte bereist in der Cache Tabelel enthalten sind. Dies entlastet den Server und beschleunigt die Auslieferung der Seiten.
 
 ## Parameter
 
