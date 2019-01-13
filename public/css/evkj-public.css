@@ -2,19 +2,83 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+.evkj-table-green,
+.evkj-row-green,
+.evkj-cell-green{
+    
+    background-color: #44ff44;
+    
+}
 
-.evkj-widget, .evkj-shortcode {
-   border: 1px solid #ccc;
-   background-color : #fff;
+.evkj-table-white,
+.evkj-row-white,
+.evkj-cell-white {
+    
+    background-color: #fff;
+    
+}
+
+.evkj-table-purple,
+.evkj-row-purple,
+.evkj-cell-purple {
+    
+    background-color: #ff44ff;
+    
+}
+
+.evkj-table-black,
+.evkj-row-black,
+.evkj-cell-black {
+    
+    background-color: #aaa ;
+    
+}
+.evkj-table-red,
+.evkj-row-red,
+.evkj-cell-red {
+    
+    background-color: #ff4444;
+    
+}
+
+.evkj-cell-green,
+.evkj-cell-white,
+.evkj-cell-purple,
+.evkj-cell-black,
+.evkj-cell-red {
+    
+    background-color: white;
+    
 }
 
 
+.evkj-widget, .evkj-shortcode {
+    
+    float : left; 
+    background-color : #fff;
+    -webkit-transition: height 4s; /* For Safari 3.1 to 6.0 */
+    transition: height 4s;
+
+}
+
+.evkj-widget:hover, .evkj-shortcode:hover {
+
+    height : 100%;
+}
+
+
+.evkj-widget:after, .evkj-shortcode:after {
+
+    content : "";
+    clear: both;
+    
+}
 .evkj-shortcode-big {
-   max-width: 600px;
+    float: left;
+    border: 1px solid #ccc;
 }
 
 .evkj-shortcode-small {
-   max-width: 300px;
     
 }
 
@@ -24,142 +88,152 @@
    margin: 0 5% 1em;
 }
 
-/**
- *  Folgende Klasse wir um die  Feldnamen erzeugt. 
- * Leider sind diese Im Original nicht formatioerbar.
- * 
- */
 
-.evkj-fieldname {
-    font-weight : bold;
+.evkj-table{
+    display: table; 
+    flex-wrap: wrap;
+    margin: 0.5em;
+    padding: 1em;
+    border-radius : 1em;      
 }
 
-.lk_widget_body { /* Im Plugin nicht genutzt, da body entfernt */
-	margin: 0;
+.evkj-row {
+    
+    background-color : white;
+
+    border: 1px solid #AAA;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius : 10px;
+    margin : 2% 2% 1% 1%;
+    padding: 0.1em;
+    
+    display: table;
+ /*   flex-wrap: wrap; */ 
+    float: left;
+
+
 }
 
-.lk_widget {
-	/* border: 1px solid #ccc; */
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1em;
-	color: #555;
-	box-sizing: border-box;
-	background-color: #fff;
+.evkj-fields:after {
+
+    content: "";
+    display: flex;
+    clear: both;
+    
 }
 
-.lk_widget_inner {
-	margin: 0 5% 1em;
+.evkj-field-label {
+    float: left;
+    width:40%;
+   
 }
 
-.lk_widget h2 {
-	font-family: sans-serif;
-	font-weight: 700;
-	font-size: 1.25em;
+.evkj-field-value {
+    
+    float: left;
+    width:60%;
+   
+}
+  
+.evkj-row:after {
+    content: "";
+    display: flex;
+    clear: both;
+    
 }
 
-.lk_widget_small {
-	width: 100%;
-	max-width: 300px;
+.evkj-row-fields {
+    width: 100%;
+}
+.evkj-row-fields:after {
+
+    content: "";
+    display: flex;
+    clear: both;
+   
+}
+.evkj-cell, .evkj-head {
+
+    padding: 6px 6px;
+
 }
 
-.lk_widget_big {
-	width: 100%;
-	max-width: 600px;
+.evkj-table-head {
+	font-weight: bold;
 }
 
-.lk_widget_box {
-	background-color: #F0F0F0;
-	font-size: 0.875em;
-	padding: 1em 6% 0.2em 6%;
-	margin: 0 0 1em 0;
-	border: 1px solid #e2e2e2;
+.evkj-table-heading {
+	background-color: #EEE;
+	display: table-header-group;
+	font-weight: bold;
 }
 
-.lk_widget_box a {
-	text-decoration: none;
-	font-weight: 700;
-	color: #546e7a;
-	line-height: 2;
+.evkj-table-foot {
+	background-color: #EEE;
+	display: table-footer-group;
+	font-weight: bold;
 }
 
-.lk_widget_box a:hover {
-	color: #00838f;
+.evkj-table-body {
+    
+    display: wrap;
+	flex-wrap: wrap; 
+    /* display: table-row-group;
+     */
 }
 
-.lk_widget_bulletpoint {
-	/ * background: transparent; */
-	font-size: 1em;
-	padding-right: 0.5em;
+.evkj-litdate,
+.evkj-nextdate
+
+{
+
+    width:100%;
+    font-size : 1.5em;
+    text-align: center;
+
 }
 
-.lk_widget_icon-circle {
-	font-family: "icomoon";
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	line-height: 1;
-	text-transform: none;
+
+.evkj-nextdate
+{
+    font-size : 1.0em;
 }
 
-.lk_widget_icon-circle:before {
-	content: '\2666';
+.evkj-cell,
+.evkj-cell-litdate,
+.evkj-cell-nextdate,
+
+{
+    float: left;
+    width: 50%;
 }
 
-.lk_widget_white {
-	color: #DFDFDF;
+.evkj-h1 {
+    flex-wrap: wrap; 
+    width : 100%;
 }
 
-.lk_widget_purple {
-	color: #5c3995;
+@media screen and (max-device-width : 800px) {
+    .evkj-table-white,
+    .evkj-litdate,
+    .evkj-nextdate,
+    .evkj-row, 
+    .evkj-head,
+    .evkj-cell {
+    width: 100%;
+  }
 }
 
-.lk_widget_red {
-	color: #b61b1b;
-}
-
-.lk_widget_green {
-	color: #2d7c31;
-}
-
-.lk_widget_black {
-	color: #333;
-}
-
-a.lk_widget_link_ext {
-	font-size: 0.875em;
-	color: #00acc1;
-	text-decoration: none;
-	font-weight: 400;
-}
-
-.lk_widget_box a.lk_widget_link_ext {
-	font-size: 1em;
-}
-
-a.lk_widget_link_ext:before {
-	vertical-align: middle;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	/* font-family: 'icomoon'; */
-	content: '\2192';
-	margin-left: 0.2em;
-}
-
-a.lk_widget_link_ext:hover {
-	color: #00838f;
-}
-
-.lk_widget hr {
-	-moz-border-bottom-colors: none;
-	-moz-border-left-colors: none;
-	-moz-border-right-colors: none;
-	-moz-border-top-colors: none;
-	border-color: #ccc;
-	border-image: none;
-	border-style: solid none none;
-	border-width: 0.1em 0 0;
-	display: block;
-	height: 0.1em;
-	margin: 0 0 1em;
-	padding: 0;
+@media screen and (max-device-width : 600px) {
+    .evkj-table-white,
+    .evkj-litdate,
+    .evkj-nextdate,
+    .evkj-row, 
+    .evkj-head,
+    .evkj-cell, 
+    .evkj-field-label,
+    .evkj-field-value {
+    
+        width:100%;
+    }
 }

@@ -9,40 +9,47 @@
  * that starts the plugin.
  *
  * @link              https://byggvir-de
- * @since             2019.1.1
+ * @since             2019.2.0
  * @package           Evkj
  *
  * @wordpress-plugin
  * Plugin Name:       Kirchenjahr evangelisch
  * Plugin URI:        https://github.com/Byggvir/ev-kirchenjahr
  * Description:       Zeigt den Evangelischen Liturgischen Kalender in einem Widget in der Seitenleiste an. 
- * Version:           2019.1.1
+ * Version:           2019.2.0
  * Author:            Thomas Arend
  * Author URI:        https://byggvir-de
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       evkj
  * Domain Path:       /languages
+ * Slug:              kirchenjahr_evangelisch
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) {
-	die;
-}
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 /**
  * Currently plugin version.
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PLUGIN_NAME_VERSION', '2019.1.1' );
+
+define( 'EVKJ_VERSION'  , '2019.2.0' ) ;
+
+define( 'EVKJ_CACHETAB' , 'evkt_cache' ) ;
+
+define( 'EVKJ_URL'      , 'https://liturgischer-kalender.bayern-evangelisch.de/widget/widget.php' ) ;
+
+define( 'EVKJ_PATH'     , plugin_dir_path( __FILE__ ) );
+
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-evkj-activator.php
  */
 function activate_evkj() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-evkj-activator.php';
+	require_once EVKJ_PATH . 'includes/class-evkj-activator.php';
 	Evkj_Activator::activate();
 }
 
@@ -71,7 +78,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-evkj.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    v2019.0.0
+ * @since    2019.0.0
  */
 function run_evkj() {
 
@@ -85,7 +92,7 @@ function run_evkj() {
      *
      * @since    2019.0.0
      */
-	require_once plugin_dir_path( __FILE__ ) . 'public/class_widget.php';
+	require_once EVKJ_PATH . 'public/class-widget.php';
 
 	/**
      * Embedd Shortcode.
@@ -93,6 +100,6 @@ function run_evkj() {
      * @since    2019.1.0
      */
 
-	require_once plugin_dir_path( __FILE__ ) . 'public/class_shortcodes.php';
+	require_once EVKJ_PATH . 'public/class-shortcodes.php';
 
 run_evkj();

@@ -9,8 +9,8 @@
  * @link       https://byggvir-de
  * @since      1.0.0
  *
- * @package    Evkj
- * @subpackage Evkj/includes
+ * @package    evkj
+ * @subpackage evkj/includes
  */
 
 /**
@@ -23,11 +23,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Evkj
- * @subpackage Evkj/includes
+ * @package    evkj
+ * @subpackage evkj/includes
  * @author     Thomas Arend <thomas@arend-rhb.de>
  */
-class Evkj {
+class evkj {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +35,7 @@ class Evkj {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Evkj_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      evkj_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 

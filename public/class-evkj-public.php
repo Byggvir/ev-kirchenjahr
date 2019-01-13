@@ -3,23 +3,14 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://byggvir-de
- * @since      1.0.0
- *
- * @package    Evkj
- * @subpackage Evkj/public
- */
-
-/**
- * The public-facing functionality of the plugin.
- *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Evkj
+ * @package    evkj
  * @subpackage Evkj/public
  * @author     Thomas Arend <thomas@arend-rhb.de>
  */
+ 
 class Evkj_Public {
 
 	/**
@@ -47,7 +38,8 @@ class Evkj_Public {
 	 * @param      string    $plugin_name       The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+
+	 public function __construct( $plugin_name, $version ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
