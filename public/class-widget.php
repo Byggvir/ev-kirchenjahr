@@ -177,10 +177,10 @@ class evkj_Widget extends WP_Widget {
 	 */
 	function form( $instance ) {
 
-		global $evkj_WigetDefValues, $evkj_WidgetLabels ;
+		global $evkj_WidgetDefValues, $evkj_WidgetLabels ;
 
 		if ( $instance ) {
-			$instance = wp_parse_args( (array) $instance, $evkj_DefValues );
+			$instance = wp_parse_args( (array) $instance, $evkj_WidgetDefValues );
 			foreach ( $evkj_WidgetDefValues as $key => $value ) {
 				$$key = esc_attr( $instance[ $key ] );
 			}
