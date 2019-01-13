@@ -97,16 +97,17 @@ class evkj_Widget extends WP_Widget {
 	 */
 	function widget( $args, $instance ) {
 
-		global $wpdb, $evkj_WidgetDefValues, $evkj_WidgetLabels ;
+		global $wpdb, $evkj_WidgetDefValues, $evkj_WidgetLabels, $evkj_WidgetSettingNames ;
 
 		$wg_atts = $args;
 
 		foreach ( $instance as $key => $value) {
 			$wg_atts[$key] = trim(empty($instance[$key]) ? $evkj_WidgetDefValues[$key] : $instance[$key]);
 		}
+		
 		$wg_atts['title'] = apply_filters('widget_title', $wg_atts['title']);
 
-		$API = new Evkj_WidgetAPI();
+		$API = new evkj_WidgetAPI();
 
 
 
@@ -162,7 +163,7 @@ class evkj_Widget extends WP_Widget {
 		global $evkj_WidgetDefValues, $evkj_WidgetLabels ;
 
 		$instance = $old_instance;
-		foreach ( $evkj_WigetDefValues as $key => $value ) {
+		foreach ( $evkj_WidgetDefValues as $key => $value ) {
 			$instance[$key] = strip_tags($new_instance[$key]);
 		}
 		$instance['fields'] = preg_replace('#([0-9](,[0-9])*.*#', '$1', $instance['fields']);
