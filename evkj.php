@@ -18,7 +18,7 @@
  * Description:       Zeigt den Evangelischen Liturgischen Kalender in einem Widget in der Seitenleiste an. 
  * Version:           2019.2.0
  * Author:            Thomas Arend
- * Author URI:        https://byggvir-de
+ * Author URI:        https://byggvir.de/wordpress/ev-kirchenjahr/
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       evkj

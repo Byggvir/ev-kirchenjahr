@@ -28,7 +28,7 @@ require_once EVKJ_PATH . 'public/class-litkalapi.php';
 $evkj_WidgetLabels =
 	array (
 	'size' => 'Gr&ouml&szlig;e (small / big)',
-	'fields' => 'Felder: 0 = Wochenspruch, 1 = Wochenpsalm, 2 = Eingangspsalm, 3 = AT-Lesung, 4= Epistel, 5 = Predigttext, 6 = Evangelium, 7 = Wochenlied, 8 = liturgische Farbe,  9 = Wochenspruch (Text)) ',
+	'fields' => 'Felder: 0 = Wochen&shy;spruch, 1 = Wochen&shy;psalm, 2 = Eingangs&shy;psalm, 3 = AT-Lesung, 4= Epis&shy;tel, 5 = Predigt&shy;text, 6 = Evan&shy;gelium, 7 = Wochen&shy;lied, 8 = litur&shy;gische Farbe,  9 = Wochen&shy;spruch (Text)) ',
 	'current' => 'Aktueller = true, kommender Feiertag leer',
 	'date' => 'Datum',
 	'title' => 'Titel'
@@ -172,7 +172,8 @@ class evkj_Widget extends WP_Widget {
 		foreach ( $evkj_WidgetDefValues as $key => $value ) {
 			$instance[$key] = strip_tags($new_instance[$key]);
 		}
-		$instance['fields'] = preg_replace('#([0-9](,[0-9])*.*#', '$1', $instance['fields']);
+		// ToDo Check input
+		// $instance['fields'] = preg_replace('#[0-9](,[0-9])*.*#', '$1', $instance['fields']);
 		return $instance;
 	}
 
