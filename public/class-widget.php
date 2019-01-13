@@ -99,8 +99,14 @@ class evkj_Widget extends WP_Widget {
 
 		global $wpdb, $evkj_WidgetDefValues, $evkj_WidgetLabels, $evkj_WidgetSettingNames ;
 
-		$wg_atts = $args;
-
+		$wg_atts 	array (
+            'size' => 'big',
+            'fields' => 'max',
+            'current' => '',
+            'date' => '',
+            'title' => 'Kirchenjahr'
+            );
+            
 		foreach ( $instance as $key => $value) {
 			$wg_atts[$key] = trim(empty($instance[$key]) ? $evkj_WidgetDefValues[$key] : $instance[$key]);
 		}
