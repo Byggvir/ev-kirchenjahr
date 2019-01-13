@@ -95,7 +95,7 @@ class evkj_ShortCodes {
         <div class=\"evkj-copyright\">
         Ein Angebot der <a href=\"https://liturgischer-kalender.bayern-evangelisch.de\" target=\"_blank\">ELKB & VELKD</a>
 		$SEP
-		Powered by <a href=\"https://github.com/Byggvir/ev-kirchenjahr\" target=\"_blank\">$plungin_name()Ev. Kirchenjahr $ver </a>
+		Powered by <a href=\"https://github.com/Byggvir/ev-kirchenjahr\" target=\"_blank\">Ev. Kirchenjahr $ver </a>
 		$SEP
 		&copy; 2019 Thomas Arend
 		</div>

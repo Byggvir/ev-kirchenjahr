@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              https://byggvir-de
- * @since             2019.2.0
+ * @since             2019.2.1
  * @package           Evkj
  *
  * @wordpress-plugin
