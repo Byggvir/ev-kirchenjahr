@@ -1,8 +1,8 @@
 === Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
+Contributors: ByggvirOfBarley
 Donate link: https://byggvir-de
 Tags: Liturgie, Kalender
-Requires at least: ?
+Requires at least: 3.0
 Tested up to: 5.0.2
 Stable tag: 4.3
 License: GPLv3 or later

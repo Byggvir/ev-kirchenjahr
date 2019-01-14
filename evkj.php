@@ -37,7 +37,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 define( 'EVKJ_VERSION'  , '2019.2.0' ) ;
 
-define( 'EVKJ_CACHETAB' , 'evkt_cache' ) ;
+define( 'EVKJ_CACHETAB' , 'evkj_cache' ) ;
 
 define( 'EVKJ_URL'      , 'https://liturgischer-kalender.bayern-evangelisch.de/widget/widget.php' ) ;
 
