@@ -4,7 +4,7 @@
  *
  * @link              http://byggvir.de
  * @since             2019.0.1
- * @version 2019.1.1
+ * @version 2019.2.2
  * @copyright 2019 Thomas Arend Rheinbach Germany
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  * @plugin-wordpress
@@ -88,7 +88,6 @@ class evkj_Widget extends WP_Widget {
 		$this->version = 'v2019.1.1';
 	}
 
-
 	/**
 	 *
 	 * @see WP_Widget::widget
@@ -115,32 +114,12 @@ class evkj_Widget extends WP_Widget {
 
 		$API = new evkj_WidgetAPI();
 
-
-
-		/**
-		 * Detect Google Bot or Bing Bot. We don't care about real or a fake.
-		 *
-		 */
-		if (preg_match('/(Googlebot|bingbot)/', $_SERVER['HTTP_USER_AGENT'])) {
-			$innercontent = '
-                <div class="lk_widget lk_widget_small">
-                <div class="lk_widget_inner">
-                <h2>Liturgischer Kalender
-                </h2>
-                <div class="lk_widget_box">
-                <p><span class="evkj-fieldname">Der HERR sprach zu den Bots:</span><br /> Und ich sage euch auch:<br />Bittet, so wird euch gegeben;<br /> suchet, so werdet ihr finden;<br />klopfet an, so wird euch aufgetan.<br />
-                <a href="https://www.bibleserver.com/search/LUT/suchet/1">Lukas 11,9</a><p>
-                </div></div></div>
-                ';
-		}
-		else {
-			$innercontent = $API->getday(
+		$innercontent = $API->getday(
 				$wg_atts['size'],
 				$wg_atts['fields'],
 				$wg_atts['current'],
 				$wg_atts['date'],
 				true);
-		}
 
 		$v= $this->version;
 		$title = $wg_atts['title'] ;
@@ -155,7 +134,6 @@ class evkj_Widget extends WP_Widget {
 		";
 
 	}
-
 
 	/**
 	 *
@@ -176,7 +154,6 @@ class evkj_Widget extends WP_Widget {
 		// $instance['fields'] = preg_replace('#[0-9](,[0-9])*.*#', '$1', $instance['fields']);
 		return $instance;
 	}
-
 
 	/**
 	 *
