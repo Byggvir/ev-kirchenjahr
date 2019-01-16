@@ -12,7 +12,7 @@ WordPress Plugin zur Anzeige des "Kirchenjahr evangelisch" als Widget
 
 == Description ==
 
-T# ev-kirchenjahr
+## ev-kirchenjahr
 WordPress Plugin zur Anzeige des "Kirchenjahr evangelisch" als Widget
 
 ## Parameter
@@ -74,7 +74,13 @@ Answer to foo bar dilemma.
 
 == Screenshots ==
 
-1. Widget
+1. Example
+2. Example
+3. Example
+4. Example
+5. Example
+6. Example
+
 
 
 == Changelog ==
