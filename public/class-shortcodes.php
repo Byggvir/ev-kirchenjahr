@@ -19,16 +19,11 @@
  */
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
-define('EVKJ_SHORTCODE_VERSION', '2019.2.0');
-
-
 require_once EVKJ_PATH . 'public/class-litkalapi.php';
 
 class evkj_ShortCodes {
 
 	public $version;
-
-
 
 	/**
 	 * Constructor of the class
@@ -38,7 +33,7 @@ class evkj_ShortCodes {
 	 */
 	public function __construct() {
 
-		$this->version = EVKJ_SHORTCODE_VERSION;
+		$this->version = EVKJ_VERSION;
 
 		// Add the Shortcode
 
@@ -69,27 +64,13 @@ class evkj_ShortCodes {
 
 		$API =  new evkj_WidgetAPI();
 
-		if (preg_match('/(Googlebot|bingbot)/', $_SERVER['HTTP_USER_AGENT'])) {
-			$innercontent ='
-                <div class="lk_widget lk_widget_small">
-                <div class="lk_widget_inner">
-                <h2>Liturgischer Kalender
-                </h2>
-                <div class="lk_widget_box">
-                <p><span class="evkj-fieldname">Der HERR sprach zu den Bots:</span><br /> Und ich sage euch auch:<br />Bittet, so wird euch gegeben;<br /> suchet, so werdet ihr finden;<br />klopfet an, so wird euch aufgetan<br />
-                <a href="https://www.bibleserver.com/search/LUT/suchet/1">Lukas 11,9</a><p>
-                </div></div></div>
-                ';
-		}
-		else {
-			$innercontent = $API->getday (
-				$size,
-				$fields,
-				$current,
-				$date
-			);
-		}
-
+        $innercontent = $API->getday (
+			$size,
+			$fields,
+			$current,
+			$date
+		);
+		
 		$ver= $this->version;
 		$Copyright = "
         <div class=\"evkj-copyright\">

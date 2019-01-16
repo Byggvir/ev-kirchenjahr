@@ -123,35 +123,35 @@ class evkj_WidgetAPI {
 		{
 
 		global $wpdb, $evkj_DefFields ;
+        
+        $table_name = $wpdb->prefix . EVKJ_CACHETAB;
 
-		$table_name = $wpdb->prefix . EVKJ_CACHETAB;
+        $fieldsarr = preg_split('/,/', $fields);
 
-		$fieldsarr = preg_split('/,/', $fields);
+        $sqlfields = 'litdate,litname,litfarbe,nextdate,nextname,nextfarbe';
 
-		$sqlfields = 'litdate,litname,litfarbe,nextdate,nextname,nextfarbe';
+        if ( WP_DEBUG ) {
+            $sqlfields = 'id,cachetime,reqdate,' . $sqlfields;
+        }
 
-		if ( WP_DEBUG ) {
-			$sqlfields = 'id,cachetime,reqdate,' . $sqlfields;
-		}
+        if ( $fields != '' ) {
+            foreach ( $fieldsarr as $value ) {
+                $sqlfields .= "," . $evkj_DefFields[$value];
+            }
+        }
+        $result = $wpdb->get_row (
+            "SELECT $sqlfields FROM $table_name WHERE reqdate = \"$reqdate\" order by reqdate;" ,
+            ARRAY_A
+        ) ;
 
-		if ( $fields != '' ) {
-			foreach ( $fieldsarr as $value ) {
-				$sqlfields .= "," . $evkj_DefFields[$value];
-			}
-		}
-		$result = $wpdb->get_row (
-			"SELECT $sqlfields FROM $table_name WHERE reqdate = \"$reqdate\" order by reqdate;" ,
-			ARRAY_A
-		) ;
-
-		if (empty($result)) {
-			$this->updatecache($reqdate);
-			$result = $wpdb->get_row (
-				"SELECT $sqlfields FROM $table_name WHERE reqdate = \"$reqdate\" order by reqdate;" ,
-				ARRAY_A
-			) ;
-		}
-
+        if (empty($result)) {
+            $this->updatecache($reqdate);
+            $result = $wpdb->get_row (
+                "SELECT $sqlfields FROM $table_name WHERE reqdate = \"$reqdate\" order by reqdate;" ,
+                ARRAY_A
+            ) ;
+        }
+		
 		return $result;
 	}
 
@@ -374,29 +374,34 @@ class evkj_WidgetAPI {
 			$fields = '' ;
 			break ;
 		}
+       if (preg_match('/(Googlebot|bingbot)/', $_SERVER['HTTP_USER_AGENT'])) {
+        
+        $return = '
+                <div>Der HERR sprach zu den Bots:<br /> Und ich sage euch auch:<br />Bittet, so wird euch gegeben;<br /> suchet, so werdet ihr finden;<br />klopfet an, so wird euch aufgetan<br />
+                <a href="https://www.bibleserver.com/search/LUT/suchet/1">Lukas 11,9</a></div>
+            ';
+		} else {
+		
+            $fields = preg_replace('#([0-9](,[0-9])*).*#', '$1', $fields);
 
-		$fields = preg_replace('#([0-9](,[0-9])*).*#', '$1', $fields);
+            /**
+            * The Plugin accepts all date formate which are acceppted by the strtotime
+            */
+            ( $date != "" )? $reqdate = $this->convertDate( $date ) : $reqdate = date( 'Y-m-d' ) ;
 
+            // Nur true oder leer!
 
+            ( strtolower( $current ) == "true" ) ? $current = "true" : $current = "" ;
 
-		/**
-		 * The Plugin accepts all date formate which are acceppted by the strtotime
-		 */
-		( $date != "" )? $reqdate = $this->convertDate( $date ) : $reqdate = date( 'Y-m-d' ) ;
+            $result = $this->getcache ( $reqdate, $fields ) ;
 
-		// Nur true oder leer!
-
-		( strtolower( $current ) == "true" ) ? $current = "true" : $current = "" ;
-
-		$result = $this->getcache ( $reqdate, $fields ) ;
-
-		if (empty ( $result ) ) {
-			return $this->fallback ( $size, $fields, $current, $reqdate, $bodyonly ) ;
-		}
-		else {
-			return $this->toHTMLdivtable ( $size, $result, $fields ) ;
-		}
-
+            if (empty ( $result ) ) {
+                return $this->fallback ( $size, $fields, $current, $reqdate, $bodyonly ) ;
+            }
+            else {
+                return $this->toHTMLdivtable ( $size, $result, $fields ) ;
+            }
+        }
 	}
 
 

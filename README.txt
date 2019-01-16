@@ -3,8 +3,8 @@ Contributors: ByggvirOfBarley
 Donate link: https://byggvir-de
 Tags: Liturgie, Kalender
 Requires at least: 3.0
-Tested up to: 5.0.2
-Stable tag: 4.3
+Tested up to: 5.1.0-beta1
+Stable tag: 2019.2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

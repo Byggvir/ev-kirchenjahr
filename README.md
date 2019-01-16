@@ -9,6 +9,25 @@ Beispiel Shortcode:
 
     [litkalender size=big fields=0,1,2,3,4,5,6,7,8,9 date=2023-12-24]
 
+### Plugin Name ###
+Contributors: ByggvirOfBarley
+
+Donate link: https://byggvir-de
+
+Tags: Liturgie, Kalender
+
+Requires at least: 3.0
+
+Tested up to: 5.1.0-beta1
+
+Stable tag: 2019.2.0
+
+License: GPLv3 or later
+
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+WordPress Plugin zur Anzeige des "Kirchenjahr evangelisch" als Widget
+
 ## Beispiele
 
 ![Screenshot](https://raw.githubusercontent.com/Byggvir/ev-kirchenjahr/master/evkj-1.png)
@@ -18,7 +37,7 @@ Beispiel Shortcode:
 ![Screenshot](https://raw.githubusercontent.com/Byggvir/ev-kirchenjahr/master/evkj-5.png)
 ![Screenshot](https://raw.githubusercontent.com/Byggvir/ev-kirchenjahr/master/evkj-6.png)
 
-## Abrbeitsweise
+## Arbeitsweise
 
 Das Plugin holt die Daten mittels [../widget-php?size=big&date=<datum>&fields=0,1,2,3,4,5,6,7,8,9]([https://literliturgischer-kalender.bayern-evangelisch.de/widget/widget-php?size=big&date=<datum>&fields=0,1,2,3,4,5,6,7,8,9) vom Server, wertet die Rückgabe aus und speichert das ergebnis in einer WordPress Tabelle *&lt;wp-prefix&gt;-evkj-cache*. Vor erneuter Abfrage eines bestimmten Datums wird geprüft, ob die Werte bereist in der Cache Tabelel enthalten sind. Dies entlastet den Server und beschleunigt die Auslieferung der Seiten.
 
