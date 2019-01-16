@@ -85,7 +85,7 @@ class evkj_Widget extends WP_Widget {
 			/* Base ID */ 'evkj_widget' ,
 			/* Name */ 'Kirchenjahr evangelisch' ,
 			array( 'description' => 'Zeigt die Informationen zum nächsten Feiertag an.' ) );
-		$this->version = 'v2019.1.1';
+		$this->version = EVKJ_VERSION ;
 	}
 
 	/**
