@@ -376,7 +376,7 @@ class evkj_WidgetAPI {
 		}
        if (preg_match('/(Googlebot|bingbot)/', $_SERVER['HTTP_USER_AGENT'])) {
         
-        $return '
+        return '
                 <div>Der HERR sprach zu den Bots:<br /> Und ich sage euch auch:<br />Bittet, so wird euch gegeben;<br /> suchet, so werdet ihr finden;<br />klopfet an, so wird euch aufgetan<br />
                 <a href="https://www.bibleserver.com/search/LUT/suchet/1">Lukas 11,9</a></div>
             ';
