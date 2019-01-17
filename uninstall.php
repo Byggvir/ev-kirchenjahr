@@ -29,3 +29,18 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+
+define( 'EVKJ_CACHETAB' , 'evkj_cache' ) ;
+
+function evkj_delete_table () {
+        global $wpdb;
+        $tcache = $wpdb->prefix . EVKJ_CACHETAB ;
+        $toptions = $wpdb->prefix . 'options';
+
+        $wpdb->query( "DROP TABLE IF EXISTS $tcache;" );
+        $wpdb->query( "DELETE FROM  $toptions where option_name regexp \"evkj_\";");
+}
+
+evkj_delete_table();
+
+?>
