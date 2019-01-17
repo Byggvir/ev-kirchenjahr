@@ -107,7 +107,7 @@ class evkj_Widget extends WP_Widget {
             );
             
 		foreach ( $instance as $key => $value) {
-			$wg_atts[$key] = trim(empty($instance[$key]) ? $evkj_WidgetDefValues[$key] : $instance[$key]);
+			$wg_atts[$key] = empty($instance[$key]) ? trim($evkj_WidgetDefValues[$key]) : trim($instance[$key]);
 		}
 		
 		$wg_atts['title'] = apply_filters('widget_title', $wg_atts['title']);
