@@ -12,7 +12,7 @@ WordPress Plugin zur Anzeige des "Kirchenjahr evangelisch" als Widget
 
 == Description ==
 
-## ev-kirchenjahr
+## Kirchenjahr Evangelisch
 WordPress Plugin zur Anzeige des "Kirchenjahr evangelisch" als Widget
 
 ## Parameter
@@ -45,32 +45,42 @@ Wert |Feld
 
 == Installation ==
 
+### Von WordPress ###
+
+Unter Plugins -> Installieren nach kirchenjahr suchen. Dann "Installieren" und "Aktivieren" anklicken.  
+
+### Von GitHub ###
+
 Mit **git** wird das Plugin mit folgendem Befehl installiert
 
-```shell
-git clone https://github.com/Byggvir/ev-kirchenjahr/
-```
+    git clone https://github.com/Byggvir/ev-kirchenjahr/
 
-### ZIP-Archiv
+### ZIP-Archiv ###
 
 Als ZIP -Archiv von github herunterladen und in */wp-content/plugins* entpacken.
 
 Ungefähr so:
 
-```shell
-wget https://github.com/Byggvir/ev-kirchenjahr/archive/master.zip -d /var/www/html/wp-content/plugins/
-unzip master.zip
-```shell
+    get https://github.com/Byggvir/ev-kirchenjahr/archive/2019.2.7.zip
+    unzip 2019.2.7.zip
+    mv  ev-kirchenjahr-2019.2.7 /var/www/html
 
+    Die 2019.2.7 bitte durch die aktuelle Version ersetzen oder ein Update ausführen.
+ 
 == Frequently Asked Questions ==
 
 = A question that someone might have =
 
 An answer to that question.
 
-= What about foo bar? =
+= Wie steht es mit dem Datenschutz? =
 
-Answer to foo bar dilemma.
+Das Plugin ist datenschutz-freundlich
+
+Das Plugin bekommt alle Daten von dem Server, der die WordPress Seite hosted. Es werden keine Daten des Anfragenden an dritte Server weitergegeben.
+Befindet sich ein Tag noch nicht im Datenbestand des Servers, versucht der Server die Daten von www.kirchenjahr-evangelisch.de zu holen und speichert
+sie ins einem Cache. Anschließend werden die Daten aus dem Cache gelesen und ausgeliefert. Dabei werden keine Informationen über den Seitenaufrufer an
+www.kirchenjahr-evangelisch.de weitergegeben. Daten des Anfragers (IP-Adresse, User-Agent ...) werden nicht im Cache gespeichert.  
 
 == Screenshots ==
 
