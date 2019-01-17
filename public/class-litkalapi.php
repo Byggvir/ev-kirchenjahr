@@ -111,15 +111,13 @@ class evkj_WidgetAPI {
 
 	}
 
-
-
 	/**
 	 *
 	 * @param unknown $reqdate (optional)
 	 * @param unknown $fields  (optional)
 	 * @return unknown
 	 */
-	private function getcache( $reqdate = '', $fields = '0,1,2,3,4,5,6,7,8,9' )  // Format reqdate = 'Y-m-d'
+	private function getcache( $reqdate = '', $current='', $fields = '0,1,2,3,4,5,6,7,8,9' )  // Format reqdate = 'Y-m-d'
 		{
 
 		global $wpdb, $evkj_DefFields ;
@@ -393,14 +391,9 @@ class evkj_WidgetAPI {
 
             ( strtolower( $current ) == "true" ) ? $current = "true" : $current = "" ;
 
-            $result = $this->getcache ( $reqdate, $fields ) ;
+            $result = $this->getcache ( $reqdate, $current, $fields ) ;
 
-            if (empty ( $result ) ) {
-                return $this->fallback ( $size, $fields, $current, $reqdate, $bodyonly ) ;
-            }
-            else {
-                return $this->toHTMLdivtable ( $size, $result, $fields ) ;
-            }
+            return $this->toHTMLdivtable ( $size, $result, $fields ) ;
         }
 	}
 
