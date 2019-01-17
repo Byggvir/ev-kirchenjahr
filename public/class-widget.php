@@ -126,7 +126,7 @@ class evkj_Widget extends WP_Widget {
 
 		print "
         <div class=\"evkj-widget\">
-        <h2 class=\"evkj-widget-title\">$title</h2>
+        <h3 class=\"evkj-widget-title\">$title</h3>
         $innercontent
 		<div class=\"evkj-copyright\">Ein Angebot der <a href=\"https://liturgischer-kalender.bayern-evangelisch.de\" target=\"_blank\">ELKB & VELKD</a>
 		<br />Powered by <a href=\"https://github.com/Byggvir/ev-kirchenjahr\" target=\"_blank\">Ev. Kirchenjahr $v</a><br/>&copy; 2019 Thomas Arend</div>
