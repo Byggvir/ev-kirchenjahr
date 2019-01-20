@@ -51,6 +51,7 @@ er Wert des Parameter Translation hängt von der jeweiligen Onlinebibel ab.
 
 ### Beispiele bibelserver.com
 
+####Abkürzungen der Übersetzungen
 
 LUT | Lutherbibel 2017
 ELB | Elberfelder Bibel
@@ -105,12 +106,27 @@ LXX | Septuaginta
 VUL | Vulgata
 ABV | Hörbibel
 
+### Beispiele die-bibel.de
+
+####Abkürzungen der Übersetzungen
+
+LU | Luther (ursprünglich Luther 1984, jetzt Luther 2017)
+LUT17 | Luther 2017
+LUT84 | Luther 1984
+GNB | Gute Nachricht
+MNG | Menge
+EUE | Einheitsübersetzung
+ZUB | Zürcher
+NGUE | Neue Genfer Übersetzung
+SCHL | Schlachter
+KJV | King James 
+
 
 == Installation ==
 
 ### Von WordPress ###
 
-Unter Plugins -> Installieren nach kirchenjahr suchen. Dann "Installieren" und "Aktivieren" anklicken.  
+Unter Plugins -> Installieren nach "kirchenjahr" suchen. Dann "Installieren" und "Aktivieren" anklicken.  
 
 ### Von GitHub ###
 
@@ -124,11 +140,11 @@ Als ZIP -Archiv von github herunterladen und in */wp-content/plugins* entpacken.
 
 Ungefähr so:
 
-    get https://github.com/Byggvir/ev-kirchenjahr/archive/2019.2.7.zip
-    unzip 2019.2.7.zip
-    mv  ev-kirchenjahr-2019.2.7 /var/www/html
+    get https://github.com/Byggvir/ev-kirchenjahr/archive/2019.3.1.zip
+    unzip 2019.3.1.zip
+    mv  ev-kirchenjahr-2019.3.1 /var/www/html
 
-    Die 2019.2.7 bitte durch die aktuelle Version ersetzen oder ein Update ausführen.
+Die 2019.3.1 bitte durch die aktuelle Version ersetzen oder ein Update ausführen.
  
 == Frequently Asked Questions ==
 

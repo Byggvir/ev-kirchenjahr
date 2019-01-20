@@ -33,18 +33,21 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
   <li>Vers = 1. Mose 1</li>
   </ol>
   <p>
-  Ergibt: https://www.bibleserver.com/text/<strong style="color:blue">LUT</strong>/<strong style="color:blue">1.Mose1</strong>
+  Ergibt: https://www.bibleserver.com/text/<strong style="color:blue">LUT</strong>/<strong style="color:blue">1.%20Mose%201</strong>
   </p>
   <h3>Beispiel 2: die-bibel.de</h3>
   <ol>
-  <li>URL = https://www.die-bibel.de/bibeln/online-bibeln/<strong style="color:blue">%s</strong>/bibeltext/bibel/text/lesen/?tx_bibelmodul_bibletext[scripture]=<strong style="color:blue">%s</strong></li>
+  <li>URL = https://www.die-bibel.de/bibeln/online-bibeln/<strong style="color:blue">%s</strong>/bibeltext/<strong style="color:blue">%s</strong><strong style="color:blue">%s/</strong></li>
   <li>Translation = lutherbibel-2017</li>
   <li>Vers = 1. Mose 1</li>
   </ol>
   <p>
-  Ergibt: https://www.die-bibel.de/bibeln/online-bibeln/<strong style="color:blue">lutherbibel-2017</strong>/bibeltext/bibel/text/lesen/?tx_bibelmodul_bibletext[scripture]=<strong style="color:blue">1.Mose1</strong>
+  Ergibt: https://www.die-bibel.de/bibeln/online-bibeln/<strong style="color:blue">lutherbibel-2017</strong>/bibeltext/<strong style="color:blue">1.%20Mose%201</strong>/
   </p>
-  
+  <p>
+  <strong>Achtung:</strong> Der Beispiellink unter <a href="https://www.die-bibel.de/bibeln/online-bibeln/bibeltext-verlinken/" target="_blank">Die Bibel</a> funktioniert leider nicht, da die Übersetzung vor dem Vers in der URL stehen muss. Die Abkürzungen für die Übersetzung funktionieren an der Stelle auch nicht; hier ist die Langversion erforderlich.
+  </p>
+ 
   <form method="post" action="options.php">
     <?php @settings_fields('evkj_group'); ?>
     <?php @do_settings_fields('evkj_group'); ?>
