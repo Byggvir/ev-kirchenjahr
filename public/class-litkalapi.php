@@ -260,7 +260,10 @@ class evkj_WidgetAPI {
 	private function toHTMLdivtable( $size = 'small', $result, $fields = '0,1,2,3,4,5,6,7,8,9' ) {
 
 		global $evkj_DefFields, $evkj_DefLabels;
-
+        
+        $URL = get_option(EVKJ.'URL', 'https://www.bibleserver.com/text/%s/%s');
+        $Translation =  get_option(EVKJ.'Translation','LUT');
+        
 		$content  = "<div class=\"evkj-table evkj-table-". $result['litfarbe'] . "\">\n" ;
 		$content .= "<div class=\"evkj-table-body evkj-table-". $result['litfarbe'] . "\">\n";
 
@@ -281,10 +284,21 @@ class evkj_WidgetAPI {
 
 					$f = $evkj_DefFields[$value];
 					$l = $evkj_DefLabels[$f];
+					
 					$v = preg_replace('/Evangelisches Gesangbuch/', 'EG', $result[$evkj_DefFields[$value]]);
 					$v = preg_replace('/ oder EG/', '<br />EG', $v);
+					
 					$content .= "\t<div class=\"evkj-row evkj-row-fields evkj-row-$f\">\n";
 					$content .= "\t\t<div class=\"evkj-head evkj-field-label evkj-head-$f\">$l:</div>\n";
+					if ($value <= 6) {
+                        $v = '<a href="' . esc_url(sprintf($URL,$Translation,$v)) . '" target="_blank" >' . $v .'</a>';
+                    } elseif ($value == 9) 
+                    {
+                       if ( preg_match('/\(.*\)/',$v,$vers) === 1) {
+                            $v=preg_replace( "/\((.*)\)/" , '(<a href="' . esc_url(sprintf($URL,$Translation,substr($vers[0],1,-1))) . '" target="_blank" >\1</a>)' , $v);
+                        }
+                    }
+                    
 					$content .= "\t\t<div data-label=\"$l\" class=\"evkj-cell evkj-field-value evkj-cell-$f\">" . $v . "</div>\n";
 					$content .= "\t</div>\n";
 				}
