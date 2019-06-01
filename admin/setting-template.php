@@ -3,7 +3,7 @@
  * includes/setting-template.php
  *
  * @package kirchenjahr-evangelisch
- * @version 2019.3
+ * @version 2019.3.2
  * @copyright 2019 Thomas Arend Rheinbach Germany
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  * @author Thomas Arend <thomas@arend-rhb.de>

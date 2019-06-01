@@ -18,9 +18,9 @@ Tags: Liturgie, Kalender
 
 Requires at least: 3.0
 
-Tested up to: 5.1.0-beta1
+Tested up to: 5.2.1
 
-Stable tag: 2019.2.0
+Stable tag: 2019.3.2
 
 License: GPLv3 or later
 
