@@ -148,18 +148,17 @@ Die 2019.3.1 bitte durch die aktuelle Version ersetzen oder ein Update ausführe
  
 == Frequently Asked Questions ==
 
-= A question that someone might have =
-
-An answer to that question.
-
 = Wie steht es mit dem Datenschutz? =
 
-Das Plugin ist datenschutz-freundlich
+Das Plugin ist datenschutz-freundlich.
 
-Das Plugin bekommt alle Daten von dem Server, der die WordPress Seite hosted. Es werden keine Daten des Anfragenden an dritte Server weitergegeben.
-Befindet sich ein Tag noch nicht im Datenbestand des Servers, versucht der Server die Daten von www.kirchenjahr-evangelisch.de zu holen und speichert
-sie ins einem Cache. Anschließend werden die Daten aus dem Cache gelesen und ausgeliefert. Dabei werden keine Informationen über den Seitenaufrufer an
-www.kirchenjahr-evangelisch.de weitergegeben. Daten des Anfragers (IP-Adresse, User-Agent ...) werden nicht im Cache gespeichert.  
+Das Plugin speichert keine personenbezogenen Daten. Auf die Log-Daten, die der Web-Server erfasst, hat das Plugin keinen Einfluss.
+
+Befinden sich die liturgischen Informationen über einen bestimmten Tag nicht im Datenbestand des Web-Servers, versucht das Plugin die Daten von www.kirchenjahr-evangelisch.de zu holen und speichert den liturgischen Tag in seinem Cache auf dem Web-Server. Anschließend werden die Daten aus dem Cache gelesen und ausgeliefert.
+
+Es werden keine Informationen über den Seitenaufrufer an www.kirchenjahr-evangelisch.de weitergegeben. Daten des Anfragers (IP-Adresse, User-Agent ...) werden nicht im Cache gespeichert.
+
+Alle Daten werden auf dem Server, der die WordPress Seite hosted zwischengespeichert. Es werden keine Daten des Anfragenden an dritte Server weitergegeben.
 
 == Screenshots ==
 
