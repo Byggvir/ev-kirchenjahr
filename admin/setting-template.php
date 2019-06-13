@@ -49,10 +49,9 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
   </p>
  
   <form method="post" action="options.php">
-    <?php @settings_fields('evkj_group'); ?>
-    <?php @do_settings_fields('evkj_group'); ?>
+    <?php settings_fields('evkj_group'); ?>
     <?php do_settings_sections('evkj_kirchenjahr'); ?>
-    <?php @submit_button(); ?>
+    <?php submit_button(); ?>
   </form>
 
   <h2>Parameter des Shortcodes [litkalender]</h2>
