@@ -323,7 +323,7 @@ class evkj_WidgetAPI {
 
 
 	/**
-	 * Meaning of the request parabeter from https://liturgischer-kalender.bayern-evangelisch.de/
+	 * Meaning of the request parameter from https://liturgischer-kalender.bayern-evangelisch.de/
 	 *
 	 * Parametername |  Werte
 	 * ------------- | -------------
