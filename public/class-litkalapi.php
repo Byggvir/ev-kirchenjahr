@@ -336,6 +336,8 @@ class evkj_WidgetAPI {
 	 * date | Format: 'YYYY-mm-dd' (z.B. 2016-12-31). Hiermit gibt das Widget Daten für ein bestimmtes Datum aus. Standard: aktueller Tag.
 	 *
 	 * current | 'true'. Falls gesetzt, gibt das Widget Daten für die laufende Woche aus. Standard: (leer)
+	 * bodyonly | 'true'. Keine Ahnung, der Parameter macht in dieser Version nix.
+	 * rawarray | 'false'. Falls auf true gesetzt, wird anstelle von HTML das Resultat als Array zurückgegeben.
 	 *
 	 *
 	 * Liturgische Felder (fields):
@@ -357,8 +359,9 @@ class evkj_WidgetAPI {
 	 * @param string  $fields   (optional)
 	 * @param string  $current  (optional)
 	 * @param string  $date     (optional)
-	 * @param string  $bodyonly (optional)
-	 * @return string
+	 * @param boolean  $bodyonly (optional)
+	 * @param boolean  $rawarray (optional)
+	 * @return mixed
 	 */
 	public function getday(
 
@@ -366,7 +369,8 @@ class evkj_WidgetAPI {
 		$fields = '1,2,3,4,5,6,7,8,9' ,
 		$current = '' ,
 		$date = '' ,
-		$bodyonly = true
+		$bodyonly = true,
+		$rawarray = false 
 	) {
 
 		switch ( strtolower( $fields ) ) {
@@ -406,7 +410,9 @@ class evkj_WidgetAPI {
             ( strtolower( $current ) == "true" ) ? $current = "true" : $current = "" ;
 
             $result = $this->getcache ( $reqdate, $current, $fields ) ;
-
+	    if( $rawarray ) {
+		    return $result;
+	    }
             return $this->toHTMLdivtable ( $size, $result, $fields ) ;
         }
 	}
