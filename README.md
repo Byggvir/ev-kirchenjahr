@@ -14,7 +14,7 @@ Beispiel Shortcode:
 
 Contributors: ByggvirOfBarley
 
-Donate link: https://byggvir-de
+Donate link: https://byggvir.de
 
 Tags: Liturgie, Kalender
 
