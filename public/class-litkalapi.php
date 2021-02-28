@@ -199,7 +199,7 @@ class evkj_WidgetAPI {
 		foreach ($fieldlist as $key => $field) {
 
 			if ( ! preg_match('/Zum Kalender/', $field)) {
-				$temp = trim(preg_replace('#<br />#', ' ', $field)); // Zeilenumbruch zu lehrzeichen
+				$temp = trim(preg_replace('#<br />#', ' ', $field)); // Zeilenumbruch zu Leerzeichen
 
 				$temp=preg_replace('/<[^>]*>/', '', $temp);   // HTML Code entfernen
 				$temp=preg_replace('/^[\t ]*/', '', $temp);  // Einrückungen entfernen

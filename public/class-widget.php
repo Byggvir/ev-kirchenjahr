@@ -194,6 +194,6 @@ class evkj_Widget extends WP_Widget {
 
 // register evkj_Widget
 
-add_action( 'widgets_init', create_function( '', 'register_widget("evkj_Widget");' ) );
+add_action( 'widgets_init', function () { return register_widget("evkj_Widget");} );
 
 ?>
