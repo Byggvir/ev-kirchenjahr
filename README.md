@@ -20,9 +20,9 @@ Tags: Liturgie, Kalender
 
 Requires at least: 3.0
 
-Tested up to: 5.2.1
+Tested up to: 6.1.1
 
-Stable tag: 2019.3.2
+Stable tag: 2023.1
 
 License: GPLv3 or later
 
@@ -193,3 +193,6 @@ Oder das letzte stabile Release
 
 * v2019.1.0 Shortcode *litcalender*
 * v2019.1.1 Erkenne Google und Bing Bot und hole keine Lit. Termine
+* v2023.1   Replace create_function calls with new syntax function() ...
+
+

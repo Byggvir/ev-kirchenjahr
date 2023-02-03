@@ -3,8 +3,8 @@ Contributors: ByggvirOfBarley
 Donate link: https://byggvir-de
 Tags: Liturgie, Kalender
 Requires at least: 3.0
-Tested up to: 5.2.1
-Stable tag: 2019.3.2
+Tested up to: 6.1.1
+Stable tag: 2023.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -172,4 +172,6 @@ Alle Daten werden auf dem Server, der die WordPress Seite hosted zwischengespeic
 
 
 == Changelog ==
-
+* v2019.1.0 Shortcode *litcalender*
+* v2019.1.1 Erkenne Google und Bing Bot und hole keine Lit. Termine
+* v2023.1   Replace create_function calls with new syntax function() ....
