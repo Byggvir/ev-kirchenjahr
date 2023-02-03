@@ -4,8 +4,7 @@
  * Fired during plugin deactivation
  *
  * @link       https://byggvir-de
- * @since      1.0.0
- *
+ * @version		2023.1
  * @package    Evkj
  * @subpackage Evkj/includes
  */
@@ -27,7 +26,7 @@ class Evkj_Deactivator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 */
 	public static function deactivate() {
 

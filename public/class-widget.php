@@ -2,9 +2,9 @@
 /**
  * public/class-widget.php
  *
- * @link              http://byggvir.de
- * @since             2019.0.1
- * @version 2019.3.2
+ * @link        http://byggvir.de
+ * @since       2019.0.1
+ * @version		2023.1
  * @copyright 2019 Thomas Arend Rheinbach Germany
  * @license http://opensource.org/licenses/gpl-license.php GNU Public License
  * @plugin-wordpress

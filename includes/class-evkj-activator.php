@@ -5,7 +5,7 @@
  *
  * @link       https://byggvir-de
  * @since      1.0.0
- *
+ * @version		2023.1
  * @package    evkj
  * @subpackage ev-kirchenjahr/includes
  * @author     Thomas Arend <thomas@arend-rhb.de>
@@ -33,7 +33,7 @@ class evkj_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 */
 	public static function activate() {
 

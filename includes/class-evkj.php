@@ -8,7 +8,7 @@
  *
  * @link       https://byggvir-de
  * @since      1.0.0
- *
+ * @version		2023.1
  * @package    evkj
  * @subpackage evkj/includes
  */
@@ -33,7 +33,7 @@ class evkj {
 	 * The loader that's responsible for maintaining and registering all hooks that power
 	 * the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 * @access   protected
 	 * @var      evkj_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
@@ -42,7 +42,7 @@ class evkj {
 	/**
 	 * The unique identifier of this plugin.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 * @access   protected
 	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
 	 */
@@ -51,7 +51,7 @@ class evkj {
 	/**
 	 * The current version of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
@@ -64,7 +64,7 @@ class evkj {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 */
 	public function __construct() {
 		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
@@ -94,7 +94,7 @@ class evkj {
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 * @access   private
 	 */
 	private function load_dependencies() {
@@ -132,7 +132,7 @@ class evkj {
 	 * Uses the Evkj_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 * @access   private
 	 */
 	private function set_locale() {
@@ -147,7 +147,7 @@ class evkj {
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 * @access   private
 	 */
 	private function define_admin_hooks() {
@@ -163,7 +163,7 @@ class evkj {
 	 * Register all of the hooks related to the public-facing functionality
 	 * of the plugin.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 * @access   private
 	 */
 	private function define_public_hooks() {
@@ -178,7 +178,7 @@ class evkj {
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.
 	 *
-	 * @since    1.0.0
+	 * @since 2019.3.0
 	 */
 	public function run() {
 		$this->loader->run();

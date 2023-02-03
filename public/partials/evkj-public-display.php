@@ -6,8 +6,8 @@
  * This file is used to markup the public-facing aspects of the plugin.
  *
  * @link       https://byggvir-de
- * @since      1.0.0
- *
+ * @since   2019.1.0
+ * @version 2023.1
  * @package    Evkj
  * @subpackage Evkj/public/partials
  */

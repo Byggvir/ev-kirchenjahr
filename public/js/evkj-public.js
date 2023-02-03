@@ -1,3 +1,8 @@
+/**
+ * @version 2023.1
+ * 
+ */
+
 (function( $ ) {
 	'use strict';
 
